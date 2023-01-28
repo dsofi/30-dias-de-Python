@@ -388,7 +388,7 @@ countries_data = get_countries_data()
 print('-- Exercise 5 - Parte 1 --')
 def most_spoken_lan(data):
     lang_all = []
-    for country in countries_data:
+    for country in data:
         lang_all.extend(country['languages'])
     lang_count = {}
     for language in lang_all:
