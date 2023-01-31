@@ -1,0 +1,2 @@
+This text will be written in a newly created file.
+This text has to be appended at the end.
