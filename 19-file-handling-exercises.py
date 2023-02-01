@@ -250,7 +250,30 @@ print('10 palabras mas comunes en Romeo y Julieta LIMPIO : ', palabras_comunes)
 # a) Count the number of lines containing python or Python 
 # b) Count the number lines containing JavaScript, javascript or Javascript 
 # c) Count the number lines containing Java and not JavaScript
-''' FALTA COMPLETAR '''
+import csv
+def count_lines(txt,pattern):
+    count = 0
+    with open(txt, 'r') as archivo:
+        reader = csv.reader(archivo)
+        for line in reader:
+            line = ' '.join(line)
+            if re.search(pattern, line):
+                count += 1
+    return count
+    
+print('------------------')
+
+pattern = r'[Pp]ython'
+cant_lineas = count_lines('data/hacker_news.csv', pattern)
+print(f'Cantidad de líneas que contienen [Pp]ython : ', cant_lineas)
+
+pattern = r'JavaScript|javascript|Javascript'
+cant_lineas = count_lines('data/hacker_news.csv', pattern)
+print(f'Cantidad de líneas que contienen JavaScript, javascript or Javascript : ', cant_lineas)
+
+pattern = r'Java(?!Script)'
+cant_lineas = count_lines('data/hacker_news.csv', pattern)
+print(f'Cantidad de líneas que contienen Java and not JavaScript : ', cant_lineas)
 
 
 
