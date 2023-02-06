@@ -6,12 +6,12 @@
 
 # Importing a Module
 # To import the file we use the import keyword and the name of the file only.
-import mymodule
+import data.mymodule as mymodule
 print(mymodule.generate_full_name('Asabeneh', 'Yetayeh')) 
 
 # Import Functions from a Module
 # We can have many functions in a file and we can import all the functions differently.
-from mymodule import generate_full_name, sum_two_numbers, gravedad
+from data.mymodule import generate_full_name, sum_two_numbers, gravedad
 print(generate_full_name('Soy','Sofi'))
 print(sum_two_numbers(2,3))
 masa = 100
@@ -21,7 +21,7 @@ print(peso)
 # Import Functions from a Module and Renaming
 # During importing we can rename the name of the module.
 print('---Renaming---')
-from mymodule import generate_full_name as fullname, sum_two_numbers as total, gravedad as g
+from data.mymodule import generate_full_name as fullname, sum_two_numbers as total, gravedad as g
 print(fullname('otra','vez'))
 print(total(3,3))
 peso = masa * g
