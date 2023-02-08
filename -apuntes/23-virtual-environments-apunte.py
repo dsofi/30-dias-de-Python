@@ -53,3 +53,8 @@
 
 
 # The necessary modules to work with flask are installed. Now, your project directory is ready for a flask project. You should include the venv to your .gitignore file not to push it to github.
+
+
+
+# Exercises: Day 23
+# Create a project directory with a virtual environment based on the example given above.
