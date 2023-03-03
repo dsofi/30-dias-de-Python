@@ -1,18 +1,17 @@
 # Installing Pandas
 # For Mac:
-
-# pip install conda
-# conda install pandas
+""" 
+pip install conda
+conda install pandas
+"""
 # For Windows:
-
-# pip install conda
-# pip install pandas
-
+""" 
+pip install conda
+pip install pandas
+"""
 
 # Pandas data structure is based on Series and DataFrames.
-
 # A series is a column and a DataFrame is a multidimensional table made up of collection of series. In order to create a pandas series we should use numpy to create a one dimensional arrays or a python list.
-
 import pandas as pd
 import numpy  as np
 
@@ -43,10 +42,7 @@ print(s)
 s = pd.Series(np.linspace(5, 20, 10)) # linspace(starting, end, items)
 print(s)
 
-
-
 # DataFrames
-
 # Creating DataFrames from List of Lists
 data = [
     ['Asabeneh', 'Finland', 'Helsink'], 
@@ -69,7 +65,6 @@ data = [
     {'Name': 'John', 'Country': 'Sweden', 'City': 'Stockholm'}]
 df = pd.DataFrame(data)
 print(df)
-
 
 # Reading CSV File Using Pandas
 df = pd.read_csv('data\weight-height.csv')
@@ -108,7 +103,6 @@ print(df.describe())  # describe can also give statistical information from a da
 print(df.info())
 
 
-
 # Modifying a DataFrame
 # * We can create a new DataFrame
 # * We can create a new column and add it to the DataFrame, 
@@ -138,9 +132,7 @@ df['Height'] = heights
 print(df)
 
 # As you can see in the DataFrame above, we did add new columns, Weight and Height. Let's add one additional column called BMI(Body Mass Index) by calculating their BMI using thier mass and height. BMI is mass divided by height squared (in meters) - Weight/Height * Height.
-
 # As you can see, the height is in centimeters, so we shoud change it to meters. Let's modify the height row.
-
 # Modifying column values
 df['Height'] = df['Height'] * 0.01
 print(df)
@@ -153,13 +145,10 @@ def calculate_bmi ():
     for w,h in zip(weights, heights):
         b = w/(h*h)
         bmi.append(b)
-    return bmi
-    
+    return bmi    
 bmi = calculate_bmi()
-
 df['BMI'] = bmi
 print(df)
-
 
 # Formating DataFrame columns
 # The BMI column values of the DataFrame are float with many significant digits after decimal. Let's change it to one significant digit after point.
@@ -172,8 +161,6 @@ current_year = pd.Series(2023, index=[0,1,2])
 df['Birth Year'] = birth_year
 df['Current Year'] = current_year
 print(df)
-
-
 
 # Checking data types of Column values
 print(df.Weight.dtype)
@@ -194,10 +181,8 @@ df['Ages'] = ages
 print(df)
 
 # The person in the first row lived so far for 251 years. It is unlikely for someone to live so long. Either it is a typo or the data is cooked. So lets fill that data with average of the columns without including outlier.
-
 mean = (38 + 33)/ 2
 print('Mean: ',mean)	#it is good to add some description to the output, so we know what is what
-
 
 
 # Boolean Indexing
@@ -207,7 +192,6 @@ print(df[df['Ages'] < 120])
 # Replace the outlier age with the mean age
 df['Ages'].replace(254, mean, inplace=True)
 print(df)
-
 
 # Agregando valores:
 nuevas_filas = [{"Name": "Emily", "Country": "USA", "City": "New York", "Weight": 62, "Height": 1.65, "BMI": 22.8, "Birth Year": 1789, "Current Year": 2023, "Ages": 234},
