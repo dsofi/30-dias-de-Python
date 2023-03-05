@@ -121,3 +121,58 @@ if __name__ == '__main__':
 # Request methods, there are different request methods(GET, POST, PUT, DELETE) are the common request methods which allow us to do CRUD(Create, Read, Update, Delete) operation.
 
 # In the post, route we will use GET and POST method alternative depending on the type of request, check how it looks in the code below. The request method is a function to handle request methods and also to access form data. app.py
+
+
+# Deployment
+# Creating Heroku account
+# Heroku provides a free deployment service for both front end and fullstack applications. Create an account on heroku and install the heroku CLI for you machine. After installing heroku write the following command
+
+# Login to Heroku
+# asabeneh@Asabeneh:~$ heroku login
+# heroku: Press any key to open up the browser to login or q to exit:
+# Let's see the result by clicking any key from the keyboard. When you press any key from you keyboard it will open the heroku login page and click the login page. Then you will local machine will be connected to the remote heroku server. If you are connected to remote server, you will see this.
+
+# asabeneh@Asabeneh:~$ heroku login
+# heroku: Press any key to open up the browser to login or q to exit:
+# Opening browser to https://cli-auth.heroku.com/auth/browser/be12987c-583a-4458-a2c2-ba2ce7f41610
+# Logging in... done
+# Logged in as asabeneh@gmail.com
+# asabeneh@Asabeneh:~$
+# Create requirements and Procfile
+# Before we push our code to remote server, we need requirements
+
+# requirements.txt
+# Procfile
+# (env) asabeneh@Asabeneh:~/Desktop/python_for_web$ pip freeze
+# Click==7.0
+# Flask==1.1.1
+# itsdangerous==1.1.0
+# Jinja2==2.10.3
+# MarkupSafe==1.1.1
+# Werkzeug==0.16.0
+# (env) asabeneh@Asabeneh:~/Desktop/python_for_web$ touch requirements.txt
+# (env) asabeneh@Asabeneh:~/Desktop/python_for_web$ pip freeze > requirements.txt
+# (env) asabeneh@Asabeneh:~/Desktop/python_for_web$ cat requirements.txt
+# Click==7.0
+# Flask==1.1.1
+# itsdangerous==1.1.0
+# Jinja2==2.10.3
+# MarkupSafe==1.1.1
+# Werkzeug==0.16.0
+# (env) asabeneh@Asabeneh:~/Desktop/python_for_web$ touch Procfile
+# (env) asabeneh@Asabeneh:~/Desktop/python_for_web$ ls
+# Procfile          env/              static/
+# app.py            requirements.txt  templates/
+# (env) asabeneh@Asabeneh:~/Desktop/python_for_web$
+# The Procfile will have the command which run the application in the web server in our case on Heroku.
+
+# web: python app.py
+# Pushing project to heroku
+# Now, it is ready to be deployed. Steps to deploy the application on heroku
+
+# git init
+# git add .
+# git commit -m "commit message"
+# heroku create 'name of the app as one word'
+# git push heroku master
+# heroku open(to launch the deployed application)
