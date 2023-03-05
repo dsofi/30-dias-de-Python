@@ -103,3 +103,21 @@ if __name__ == '__main__':
 
 # We can inject data to the HTML files using Jinja2 template engine.
 
+
+# Creating a layout
+# In the template files, there are lots of repeated codes, we can write a layout and we can remove the repetition. Let's create layout.html inside the templates folder. After we create the layout we will import to every file.
+
+# Serving Static File
+# Create a static folder in your project directory. Inside the static folder create CSS or styles folder and create a CSS stylesheet. We use the url_for module to serve the static file.
+
+# layout.html
+
+# Now, lets remove all the repeated code in the other template files and import the layout.html. The href is using url_for function with the name of the route function to connect each navigation route.
+
+# home.html
+# about.html
+
+
+# Request methods, there are different request methods(GET, POST, PUT, DELETE) are the common request methods which allow us to do CRUD(Create, Read, Update, Delete) operation.
+
+# In the post, route we will use GET and POST method alternative depending on the type of request, check how it looks in the code below. The request method is a function to handle request methods and also to access form data. app.py
